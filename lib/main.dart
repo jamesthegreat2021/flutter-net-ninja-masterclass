@@ -14,8 +14,24 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
+
+  List<String> quotes = [
+    'be yourself, everyone else is already taken', 
+    'i have nothing to declare except my genius', 
+    'the truth is rarery pure and never simple ',
+  ];
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        title: Text('Awesome Quotes'), 
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+      ),
+      body: Column(
+        children: quotes.map((quote) => Text(quote)).toList(),
+      ),
+    );
   }
 }
