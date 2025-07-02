@@ -22,6 +22,7 @@ class _QuoteListState extends State<QuoteList> {
     Quote(author: 'James Memba', name: 'this is james'),
     Quote(author: 'james the great', name: 'James is a great guy who will always make great decisions')
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,13 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote) => QuoteWidget(quote: quote)).toList(),
+        children: quotes.map((quote) => QuoteWidget(
+          quote: quote,
+          delete: () {
+            setState((){
+            quotes.remove(quote);
+          });}
+          )).toList(),
       ),
     );
   }

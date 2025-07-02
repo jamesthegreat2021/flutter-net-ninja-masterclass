@@ -4,9 +4,11 @@ class QuoteWidget extends StatelessWidget {
   const QuoteWidget({
     super.key,
     required this.quote,
+    required this.delete,
   });
 
   final dynamic quote;
+  final dynamic delete;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,11 @@ class QuoteWidget extends StatelessWidget {
               ),
       
             ),
+            SizedBox(height: 8.0),
+            TextButton.icon(onPressed: delete,
+             label: Text('delete'),
+             icon: Icon(Icons.delete),
+             ),
           ],
         ),
       ),
